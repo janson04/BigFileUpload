@@ -1,69 +1,69 @@
-<!-- scan:当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true。
-scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。
-当scan为true时，此属性生效。默认的时间间隔为1分钟。
-debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。
+<!-- scan:當此屬性設置為true時，配置檔案如果發生改變，將會被重新加載，默認值為true。
+scanPeriod:設置監測配置檔案是否有修改的時間間隔，如果沒有給出時間單位，默認單位是毫秒。
+當scan為true時，此屬性生效。默認的時間間隔為1分鐘。
+debug:當此屬性設置為true時，將打印出logback內部日誌信息，實時查看logback運行狀態。默認值為false。
 -->
 <configuration debug="true" scan="true" scanPeriod="60 seconds" packagingData="true">
-    <!-- property：用来定义变量值的标签，<property> 有两个属性，name和value。
-    通过<property>定义的值会被插入到logger上下文中。定义变量后，可以使“${}”来使用变量。
-    例如使用<property>定义上下文名称，然后在<contentName>设置logger上下文时使用。
-    -->
+    <!-- property：用來定義變量值的標籤，<property> 有兩個屬性，name和value。
+        通過<property>定義的值會被插入到logger上下文中。定義變量後，可以使“${}”來使用變量。
+        例如使用<property>定義上下文名稱，然後在<contentName>設置logger上下文時使用。
+        -->
     <!--<property name="contextName" value="context-name" /> -->
     <property name="log_home" value="log" />
-    <!-- contextName：每个logger都关联到logger上下文，默认上下文名称为“default”。
-     但可以使用<contextName>设置成其他名字，用于区分不同应用程序的记录。一旦设置，不能修改。 -->
+    <!-- contextName：每個logger都關聯到logger上下文，默認上下文名稱為“default”。
+         但可以使用<contextName>設置成其他名字，用於區分不同應用程序的記錄。一旦設置，不能修改。 -->
     <!--<contextName>${contextName}</contextName>-->
 
-    <!-- ******************** appender：日志目的地 start ******************** -->
-    <!-- 标准输出：console -->
+    <!-- ******************** appender：日誌目的地 start ******************** -->
+    <!-- 標準輸出：console -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
-        <!-- encoder 默认配置为PatternLayoutEncoder -->
+        <!-- encoder 默認配置為PatternLayoutEncoder -->
         <encoder>
-            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <!--格式化輸出：%d表示日期，%thread表示線程名，%-5level：級別從左顯示5個字符寬度%msg：日誌消息，%n是換行符-->
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
-    <!-- 文件输出：file -->
+    <!-- 檔案輸出：file -->
     <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>log/logback.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!--日志文件输出的文件名-->
+            <!--日誌檔案輸出的檔案名-->
             <FileNamePattern>${log_home}/logback.%d{yyyyMMdd}.log</FileNamePattern>
         </rollingPolicy>
         <encoder>
-            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <!--格式化輸出：%d表示日期，%thread表示線程名，%-5level：級別從左顯示5個字符寬度%msg：日誌消息，%n是換行符-->
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
-        <!--日志文件最大的大小-->
+        <!--日誌檔案最大的大小-->
         <!-- <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
                 <MaxFileSize>10MB</MaxFileSize>
             </triggeringPolicy>
         -->
     </appender>
-    <!-- ******************** appender：日志目的地 end ******************** -->
+    <!-- ******************** appender：日誌目的地 end ******************** -->
 
-    <!-- ******************** logger：精确配置package或class的level、appender,可以配置0个或多个 start ******************** -->
+    <!-- ******************** logger：精確配置package或class的level、appender,可以配置0個或多個 start ******************** -->
 
-    <!-- level:日志级别（logger中的level会覆盖root中的，即以logger中为准，不管是否向上传递）
-    name:包名 或 类的全路径 addtivity:日志信息是否向上（root）传递
+    <!-- level:日誌級別（logger中的level會覆蓋root中的，即以logger中為準，不管是否向上傳遞）
+    name:包名 或 類的全路徑 addtivity:日誌信息是否向上（root）傳遞
     -->
     <!--<logger name="logback" />-->
-    <!--logback.LogbackDemo：类的全路径 -->
+    <!--logback.LogbackDemo：類的全路徑 -->
 
     <logger name="cn.attackme.myuploader" level="debug" additivity="false">
         <appender-ref ref="console"/>
         <appender-ref ref="file"/>
     </logger>
-    <!-- ******************** logger：精确配置package或class日志的level、appender end ******************** -->
+    <!-- ******************** logger：精確配置package或class日誌的level、appender end ******************** -->
 
-    <!-- ******************** root：定义日志的level、appender，且最多只能配置一个 start ******************** -->
+    <!-- ******************** root：定義日誌的level、appender，且最多只能配置一個 start ******************** -->
     <!--TRACE < DEBUG < INFO < WARN < ERROR-->
     <root level="info">
-        <!-- 定义了INFO及以上级别的日志，分别在文件和控制台输出 -->
+        <!-- 定義了INFO及以上級別的日誌，分別在檔案和控制台輸出 -->
         <!--<level value="debug" />-->
         <!--<appender-ref ref="file" />-->
         <appender-ref ref="console" />
     </root>
-    <!-- ******************** root：定义日志的level、appender，且最多只能配置一个 end ******************** -->
+    <!-- ******************** root：定義日誌的level、appender，且最多只能配置一個 end ******************** -->
 
 </configuration>

@@ -9,13 +9,13 @@
         :BeforeUpload="beforeUpload"
         @inputUploader="inputUploader"
     />
-    <el-button type="primary" id="browse_button">选择多个文件</el-button>
+    <el-button type="primary" id="browse_button">選擇多個檔案</el-button>
     <br/>
     <el-table
       :data="tableData"
       style="width: 100%; margin: 10px 10px;">
       <el-table-column
-        label="文件名">
+        label="檔案名">
         <template slot-scope="scope">
           <span>{{scope.row.name}}</span>
         </template>
@@ -27,12 +27,12 @@
         </template>
       </el-table-column>
       <el-table-column
-        label="状态">
+        label="狀態">
         <template slot-scope="scope">
-          <span v-if="scope.row.status === -1">正在计算MD5</span>
-          <span v-if="scope.row.status === 1">MD5计算完成，准备上传</span>
-          <span v-if="scope.row.status === 4" style="color: brown">上传失败</span>
-          <span v-if="scope.row.status === 5" style="color: chartreuse">已上传</span>
+          <span v-if="scope.row.status === -1">正在計算MD5</span>
+          <span v-if="scope.row.status === 1">MD5計算完成，準備上傳</span>
+          <span v-if="scope.row.status === 4" style="color: brown">上傳失敗</span>
+          <span v-if="scope.row.status === 5" style="color: chartreuse">已上傳</span>
           <el-progress v-if="scope.row.status === 2" :text-inside="true" :stroke-width="20" :percentage="scope.row.percent"></el-progress>
         </template>
       </el-table-column>
@@ -44,7 +44,7 @@
       </el-table-column>
     </el-table>
     <br/>
-    <el-button type="danger" @click="up.start()">开始上传</el-button>
+    <el-button type="danger" @click="up.start()">開始上傳</el-button>
   </div>
 </template>
 
