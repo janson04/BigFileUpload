@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * File表存储上传的文件信息
+ * File表儲存上傳的檔案訊息
  */
 @Data
 @AllArgsConstructor

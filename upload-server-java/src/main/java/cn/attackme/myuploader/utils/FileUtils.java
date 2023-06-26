@@ -5,12 +5,12 @@ import java.io.*;
 import java.util.UUID;
 
 /**
- * 文件操作工具类
+ * 檔案操作工具類
  */
 public class FileUtils {
 
     /**
-     * 写入文件
+     * 寫入檔案
      * @param target
      * @param src
      * @throws IOException
@@ -27,7 +27,7 @@ public class FileUtils {
     }
 
     /**
-     * 分块写入文件
+     * 分塊寫入檔案
      * @param target
      * @param targetSize
      * @param src
@@ -53,7 +53,7 @@ public class FileUtils {
     }
 
     /**
-     * 生成随机文件名
+     * 生成隨機檔案名
      * @return
      */
     public static String generateFileName() {

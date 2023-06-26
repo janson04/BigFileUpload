@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 /**
- * 文件上传
+ * 檔案上傳
  */
 @RestController
 @RequestMapping("/File")

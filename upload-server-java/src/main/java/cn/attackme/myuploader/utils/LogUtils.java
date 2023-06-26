@@ -13,7 +13,7 @@ import java.util.Date;
 public class LogUtils {
 
     /**
-     * 日志输出到文件
+     * 日誌輸出到檔案
      * @param ex
      */
     public static void logToFile(Exception ex) {
@@ -25,13 +25,13 @@ public class LogUtils {
         //方法名
         String methodName = stackTraceElement.getMethodName();
         log.error("方法:" + className + "." + methodName + " | " +
-                "参数:" + stackTraceElement + " | " + "错误行：" + lineNumber + " | " +
-                "时间:" + " | " + new Date() + " | " + "异常内容:" + ex.toString()
+                "參數:" + stackTraceElement + " | " + "錯誤行：" + lineNumber + " | " +
+                "時間:" + " | " + new Date() + " | " + "異常內容:" + ex.toString()
         );
     }
 
     /**
-     * 日志输出到文件, 提供给日志切面
+     * 日誌輸出到檔案，提供給日誌切面
      * @param joinPoint
      * @param ex
      */
@@ -48,9 +48,9 @@ public class LogUtils {
                 builder.append(o);
             }
         }
-        log.error("方法:" + signature + " | " + "参数:" + builder.toString() +
-                " | " + "错误行：" + lineNumber + " | " + "时间:" + new Date() +
-                " | " + "异常内容:" + ex.toString()
+        log.error("方法:" + signature + " | " + "參數:" + builder.toString() +
+                " | " + "錯誤行：" + lineNumber + " | " + "時間:" + new Date() +
+                " | " + "異常內容:" + ex.toString()
         );
     }
 }

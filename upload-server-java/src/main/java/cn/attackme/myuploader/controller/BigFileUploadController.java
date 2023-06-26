@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 /**
- * 大文件上传
+ * 大檔案上傳
  */
 @RestController
 @RequestMapping("/BigFile")

@@ -6,11 +6,11 @@ import java.util.Map;
 import static cn.attackme.myuploader.utils.FileUtils.generateFileName;
 
 /**
- * 分块上传工具类
+ * 分塊上傳工具類
  */
 public class UploadUtils {
     /**
-     * 内部类记录分块上传文件信息
+     * 內部類記錄分塊上傳檔案訊息
      */
     private static class Value {
         String name;
@@ -25,7 +25,7 @@ public class UploadUtils {
     private static Map<String, Value> chunkMap = new HashMap<>();
 
     /**
-     * 判断文件所有分块是否已上传
+     * 判斷檔案所有分塊是否已上傳
      * @param key
      * @return
      */
@@ -42,7 +42,7 @@ public class UploadUtils {
     }
 
     /**
-     * 判断文件是否有分块已上传
+     * 判斷檔案是否有分塊已上傳
      * @param key
      * @return
      */
@@ -51,7 +51,7 @@ public class UploadUtils {
     }
 
     /**
-     * 为文件添加上传分块记录
+     * 為檔案添加上傳分塊記錄
      * @param key
      * @param chunk
      */
@@ -60,7 +60,7 @@ public class UploadUtils {
     }
 
     /**
-     * 从map中删除键为key的键值对
+     * 從map中刪除鍵為key的鍵值對
      * @param key
      */
     public static void removeKey(String key) {
@@ -70,7 +70,7 @@ public class UploadUtils {
     }
 
     /**
-     * 获取随机生成的文件名
+     * 獲取隨機生成的檔案名
      * @param key
      * @param chunks
      * @return

@@ -6,34 +6,34 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface FileDao {
     /**
-     * 通过主键获取一行数据
+     * 通過主鍵獲取一行數據
      * @return
      */
     File getById(Long id);
 
     /**
-     * 插入一行数据
+     * 插入一行數據
      * @param file
      * @return
      */
     int save(File file);
 
     /**
-     * 更新一行数据
+     * 更新一行數據
      * @param file
      * @return
      */
     int update(File file);
 
     /**
-     * 删除一行数据
+     * 刪除一行數據
      * @param id
      * @return
      */
     int deleteById(Long id);
 
     /**
-     * 根据一个或多个属性获取File
+     * 根據一個或多個屬性獲取File
      * @param file
      * @return
      */

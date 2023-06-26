@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 秒传
+ * 秒傳
  */
 @RestController
 @RequestMapping("/QuickUpload")

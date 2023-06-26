@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 import static cn.attackme.myuploader.utils.LogUtils.logToFile;
 
 /**
- * 测试日志功能
+ * 測試日誌功能
  */
 @RestController
 @RequestMapping("/Ex")
 public class TestExceptionController {
     /**
-     * 测试日志切面
+     * 測試日誌切面
      * @return
      */
     @GetMapping("/aspect")
@@ -23,7 +23,7 @@ public class TestExceptionController {
     }
 
     /**
-     * 测试日志util
+     * 測試日誌util
      */
     @GetMapping("/util")
     public void util() {

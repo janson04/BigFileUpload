@@ -26,7 +26,7 @@ public class FileDaoTests {
     private File testFile;
 
     /**
-     * 生成File实例
+     * 生成File實例
      */
     @Before
     public void generateFile() {
@@ -38,7 +38,7 @@ public class FileDaoTests {
     }
 
     /**
-     * File保存成功测试
+     * File保存成功測試
      */
     @Test
     @Transactional
@@ -48,7 +48,7 @@ public class FileDaoTests {
     }
 
     /**
-     * name为null保存抛异常测试
+     * name為null保存拋異常測試
      */
     @Test(expected = Exception.class)
     public void testSaveExceptionByNameIsNull() {
@@ -57,7 +57,7 @@ public class FileDaoTests {
     }
 
     /**
-     * 更新成功测试
+     * 更新成功測試
      */
     @Test
     @Transactional
@@ -69,7 +69,7 @@ public class FileDaoTests {
     }
 
     /**
-     * md5为null更新不抛异常测试
+     * md5為null更新不拋異常測試
      */
     @Test
     @Transactional
@@ -81,7 +81,7 @@ public class FileDaoTests {
     }
 
     /**
-     * 根据id获取File成功测试
+     * 根據id獲取File成功測試
      */
     @Test
     @Transactional
@@ -92,7 +92,7 @@ public class FileDaoTests {
     }
 
     /**
-     * 根据不存在的id获取为null
+     * 根據不存在的id獲取為null
      */
     @Test
     public void testGetByNotExitsIdReturnNull() {
@@ -100,7 +100,7 @@ public class FileDaoTests {
     }
 
     /**
-     * 根据id删除File成功
+     * 根據id刪除File成功
      */
     @Test
     @Transactional
@@ -111,7 +111,7 @@ public class FileDaoTests {
     }
 
     /**
-     * 根据不存在的id删除0条数据
+     * 根據不存在的id刪除0條數據
      */
     @Test
     public void testDeleteByNotExitsReturn0() {
@@ -119,7 +119,7 @@ public class FileDaoTests {
     }
 
     /**
-     * 根据多列查询成功
+     * 根據多列查詢成功
      */
     @Test
     @Transactional
@@ -130,7 +130,7 @@ public class FileDaoTests {
     }
 
     /**
-     * 根据某一列获取不存在的file,返回null
+     * 根據某一列獲取不存在的file，返回null
      */
     @Test
     public void testGetByNotExistFileReturnNull() {
@@ -140,7 +140,7 @@ public class FileDaoTests {
     }
 
     /**
-     * File传null, where条件失效, 返回多行, 抛异常
+     * File傳null，where條件失效，返回多行，拋異常
      */
     @Test(expected = Exception.class)
     @Transactional
@@ -152,7 +152,7 @@ public class FileDaoTests {
     }
 
     /**
-     * 根据不唯一列获取到多条数据, 抛出异常
+     * 根據不唯一列獲取到多條數據，拋出異常
      */
     @Test(expected = Exception.class)
     @Transactional

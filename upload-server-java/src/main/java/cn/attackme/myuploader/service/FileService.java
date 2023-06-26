@@ -15,7 +15,7 @@ import static cn.attackme.myuploader.utils.FileUtils.generateFileName;
 import static cn.attackme.myuploader.utils.UploadUtils.*;
 
 /**
- * 文件上传服务
+ * 檔案上傳服務
  */
 @Service
 public class FileService {
@@ -24,7 +24,7 @@ public class FileService {
 
 
     /**
-     * 上传文件
+     * 上傳檔案
      * @param md5
      * @param file
      */
@@ -37,7 +37,7 @@ public class FileService {
     }
 
     /**
-     * 分块上传文件
+     * 分塊上傳檔案
      * @param md5
      * @param size
      * @param chunks
@@ -61,7 +61,7 @@ public class FileService {
     }
 
     /**
-     * 检查Md5判断文件是否已上传
+     * 檢查Md5判斷檔案是否已上傳
      * @param md5
      * @return
      */
